@@ -1,3 +1,5 @@
+<!DOCTYPE html>
+
 <h1>TEST!!</h1>
 
 {% for query in query_list %}
@@ -6,4 +8,6 @@
 	<li><h3>title:{{query.title}}</h3></li>
 	<li><h3>email:{{query.author_email}}</h3></li>
 </ul>
+<!---當時本文需要呈現有排序項目的效果，就使用 <ol></ol> 標籤，如果不需要排序，直接使用 <ul></ul> 標籤即可 -->
+<!--<li></li> 標籤原則上預設為垂直排列，若要呈現水平排列的效果，可以使用 CSS 做到-->
 {% endfor %}
