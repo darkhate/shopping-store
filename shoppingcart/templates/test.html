@@ -1,0 +1,9 @@
+<h1>TEST!!</h1>
+
+{% for query in query_list %}
+<ul>
+	<li><h3>id:{{query.id}}</h3></li>
+	<li><h3>title:{{query.title}}</h3></li>
+	<li><h3>email:{{query.author_email}}</h3></li>
+</ul>
+{% endfor %}
