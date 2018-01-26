@@ -16,7 +16,7 @@ Including another URLconf
 from django.conf.urls import url,include
 from django.contrib import admin
 from .views import Home,redirect_where
-from shoppingcart.views import data_view,login_view
+from shoppingcart.views import data_view,login_view,Create_view
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
@@ -25,4 +25,6 @@ urlpatterns = [
     url(r'^data/', include('shoppingcart.urls', namespace="data")),
     url(r'^post/$', login_view),
     url(r'^render/$', data_view , name='render'),
+    url(r'^create/$', Create_view , name='create'),
+
 ]

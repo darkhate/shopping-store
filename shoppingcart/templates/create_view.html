@@ -1,0 +1,21 @@
+{% if messages %}
+<ul class="messages">
+    {% for message in messages %}
+    <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+    {% endfor %}
+</ul>
+{% endif %}
+
+<h1>Create New Post</h1>
+
+<form method="POST" action='.'>{% csrf_token%}
+<!--{% csrf_token%}:網址不會顯示輸入資料-->
+{{ form.as_p}}
+<!--
+.as_p:標籤段落式呈現
+.as_table:表格呈現
+.as_ul:重點標記呈現
+-->
+<input type="submit" name="Create">
+</form>
+
