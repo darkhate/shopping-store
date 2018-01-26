@@ -4,9 +4,13 @@
 
 {% for query in query_list %}
 <ul>
-	<li><h3>id:{{query.id}}</h3></li>
-	<li><h3>title:{{query.title}}</h3></li>
-	<li><h3>email:{{query.author_email}}</h3></li>
+	<li><h3>id:<a href="/data/{{ query.id }}">{{query.title}}</a></h3></li>
+	<!--<li><h3>slug:<a href='{% url "data:detail" id=query.id %}'>{{query.slug}}</a></h3></li>
+	data:dtail:點擊網站後,會先找到data位置,然後去尋找資料
+	<li><h3>id:<a href='{{ query.get_absolute_url }}'>{{query.title}}</a></h3></li>
+	get_absolute_url:要先再model定義,即可使用
+    詳請:http://python.usyiyi.cn/translate/django_182/ref/models/instances.html
+    -->
 </ul>
 <!---當時本文需要呈現有排序項目的效果，就使用 <ol></ol> 標籤，如果不需要排序，直接使用 <ul></ul> 標籤即可 -->
 <!--<li></li> 標籤原則上預設為垂直排列，若要呈現水平排列的效果，可以使用 CSS 做到-->

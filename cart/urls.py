@@ -16,13 +16,13 @@ Including another URLconf
 from django.conf.urls import url,include
 from django.contrib import admin
 from .views import Home,redirect_where
-from shoppingcart.views import data_view,render_where
+from shoppingcart.views import data_view,login_view
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', Home , name='home'),
     url(r'^redirect/$', redirect_where , name='redirect'),
-    url(r'^data/', include('shoppingcart.urls')),
-    url(r'^post/$', data_view),
-    url(r'^render/$', render_where , name='render'),
+    url(r'^data/', include('shoppingcart.urls', namespace="data")),
+    url(r'^post/$', login_view),
+    url(r'^render/$', data_view , name='render'),
 ]
